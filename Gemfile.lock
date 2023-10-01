@@ -211,6 +211,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-darwin-22
 
 DEPENDENCIES
   bootsnap
@@ -220,6 +221,7 @@ DEPENDENCIES
   jbuilder
   puma (~> 5.0)
   rails (~> 7.0.8)
+  railties (>= 0.a)
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)

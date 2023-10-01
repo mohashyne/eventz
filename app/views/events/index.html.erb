@@ -1,4 +1,4 @@
-Muhammad's age: <%= @age%>
+<%# Muhammad's age: <%= @age %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,11 +6,25 @@ Muhammad's age: <%= @age%>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+    ul {
+      color: blue;
+    }
+      ul strong{
+      color: crimson;
+    }
+    </style>
 </head>
 <body>
 <ul>
 <% @events.each do |event| %>
-  <li><%= event%></li>
+
+<li>
+<strong><%= event.name  %></strong>
+in <%= event.location %>:
+<%=  number_to_currency(event.price, precision: 0) %>
+</li>
+  
 <% end %>
 </ul>
 </body>
