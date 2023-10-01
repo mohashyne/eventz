@@ -24,7 +24,8 @@
 in <%= event.location %>:
 <%=  number_to_currency(event.price, precision: 0) %>
 </li>
-  
+ <p><%= event.starts_at%></p>
+<p><%= event.description%> </p>
 <% end %>
 </ul>
 </body>
