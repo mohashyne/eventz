@@ -1,35 +1,12 @@
-<%# Muhammad's age: <%= @age %>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-    ul {
-      color: blue;
-    }
-      ul strong{
-      color: crimson;
-    }
-    </style>
-</head>
-<body>
-<ul>
 <% @events.each do |event| %>
-
-<li>
-<strong><%= event.name  %></strong>
-in <%= event.location %>:
-<%= price(event)%>
-</li>
- <p>
- <%= day_and_time(event) %>
- </p>
+<section class="event">
+<div class="summary">
+<h2><%= event.name  %></h2>
+<h3><%= day_and_time(event) %> in <%= event.location %></h3>
+<span class="price"><%= price(event)%></span>
 <p>
 <%= truncate(event.description, length: 35, separator: ' ')%> </p>
+</div>
+</section>
 <% end %>
-</ul>
-</body>
-</html>
