@@ -13,3 +13,60 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "bootstrap-datepicker3";
+@import "bootstrap-datepicker3.standalone";
+
+
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
+*/
+.dl-horizontal dt {
+  white-space: normal;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* create two  columns for the  grid and  each ul in its block */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+}
+
+li {
+    float: left;
+    width: 50%;
+}
+
+/* Style the links inside the list items */
+ul a{
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    width: 100%;
+}
