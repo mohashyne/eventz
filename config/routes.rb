@@ -17,5 +17,8 @@ root  "events#index"
 # http://127.0.0.1:3001/events/1/edit
  get "events/:id/edit" => "events#edit", as: "edit_event"
 
+# when a PATCH request is made to a URL like /events/1, Rails will route it to the update action in the EventsController, passing the ID 1 as a parameter.
+patch "events/:id" => "events#update"
+# then we will go to our events  controller to define the action
 
 end
