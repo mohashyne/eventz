@@ -11,4 +11,11 @@ root  "events#index"
 
 #  show single event detail with dynamic id
     get "events/:id" => "events#show" , as: "event"
+
+#  edit route
+# e.g this is the url we want to use  
+# http://127.0.0.1:3001/events/1/edit
+ get "events/:id/edit" => "events#edit", as: "edit_event"
+
+
 end

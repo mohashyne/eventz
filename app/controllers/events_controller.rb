@@ -12,4 +12,10 @@ class EventsController < ApplicationController
         # dynamic using id
         @event = Event.find(params[:id])
     end
+
+
+    def edit
+        # we are using this to get the event that will be edited
+        @event = Event.find(params[:id])
+    end
 end
