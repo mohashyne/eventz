@@ -2,7 +2,10 @@
 <% @events.each do |event| %>
 <section class="event">
 <div class="summary">
-<h2><%= event.name  %></h2>
+<%# instead of "link_to event.name, event_path(event) "we can use 
+the  event path helper shortcut as event, 
+since we have define it in our route %>
+<h2><%= link_to event.name, event  %></h2>
 <h3><%= day_and_time(event) %> in <%= event.location %></h3>
 <span class="price"><%= price(event)%></span>
 <p>

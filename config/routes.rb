@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+#  to define the root page by assigning
+# our homepage
+root  "events#index"
+
  get "events" => "events#index"
  
 #  show single event detail static
@@ -6,5 +10,5 @@ Rails.application.routes.draw do
 #  get  "events/1" => "events#show"
 
 #  show single event detail with dynamic id
-    get "events/:id" => "events#show"
+    get "events/:id" => "events#show" , as: "event"
 end
