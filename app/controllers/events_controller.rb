@@ -36,4 +36,9 @@ class EventsController < ApplicationController
         redirect_to @event
        
     end
+
+    def new
+        # create a  form
+        @event = Event.new
+    end
 end
