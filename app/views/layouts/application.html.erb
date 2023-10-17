@@ -11,29 +11,14 @@
   </head>
 
   <body>
-  <header>
-  <nav>
-  <%= link_to image_tag("logo"), root_path %>
-  <ul>
-  <li>
-  <%# THIS IS  HARD CODED , for more info : http://127.0.0.1:3001/rails/info/routes%>
-  <%# <%= link_to "All Events", "/events" %>
+  
+  <%= render "/layouts/header" %>
 
-<%# DYNAMIC %>
- <%= link_to "All Events", events_path %>
-  </li>
-  <li> <%= link_to "Create New Event", new_event_path(@event)%></li>
-  </ul>
-  </nav>
-  </header>
     <div class="content">
     <%= yield %>
     </div>
 
-    <footer>
-    <p>
-    Made by <a href="https:linkedin.com/in/msalyhu">Muhammad Salyhu
-    </p>
-    </footer>
+   <%= render "/layouts/footer" %>
+  
   </body>
 </html>
