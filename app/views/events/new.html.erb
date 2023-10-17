@@ -1,28 +1,7 @@
 <h1>Create a New Event</h1>
 
-<%#to use the local browser for submission we set the 
- loccal to true , local: true annd that  disable ajx%>
-<%= form_with(model: @event, local: true) do |f| %>
+<%# instead of duplicating forms, we use partials 
+to render them from the new form template instance we created %>
 
-<%= f.label :name %>
-<%= f.text_field :name, autofocus: true %>
-
-<%= f.label :description %>
-<%= f.text_area :description, rows: 5 %>
-
-<%= f.label :location %>
-<%= f.text_field :location %>
-
-<%= f.label :price %>
-<%= f.number_field :price %>
-
-<%= f.label :starts_at %>
-<%= f.datetime_select :starts_at, {ampm: true}, {class: "datetime"} %>
-
-<%# mind u the  submit button will work using the Ajx method in javascript %>
-<%# <%= f.submit "Update", class: "button" %>
-
-<%# the button an name will be assigned automatically if we use tthe local: true %>
-<%= f.submit %>
-
-<% end %>
+<%= render "form", event: @event %>
+```
