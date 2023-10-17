@@ -23,8 +23,8 @@ class EventsController < ApplicationController
     #  we can use fail to see what needs to be done
     def update
         @event = Event.find(params[:id])
-        event_params = 
-        params.require(:event).permit(:name, :description, :location, :price, :starts_at)
+        # event_params = 
+        # params.require(:event).permit(:name, :description, :location, :price, :starts_at)
         # we are using this to update the event
         @event.update(event_params)
 
@@ -41,4 +41,21 @@ class EventsController < ApplicationController
         # create a  form
         @event = Event.new
     end
+
+    def  create
+    # event_params = 
+    #     params.require(:event).permit(:name, :description, :location, :price, :starts_at)   
+     @event = Event.new(event_params)
+     @event.save
+     redirect_to @event
+    end
+
+    # to maintain DRY
+    private
+
+    def event_params 
+        params.require(:event).
+        permit(:name, :description, :location, :price, :starts_at)
+    end 
+
 end
