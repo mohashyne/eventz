@@ -16,4 +16,9 @@
 <%# create a button for the edit %>
 <section  class="admin">
 <%= link_to "Edit", edit_event_path(@event), class: "button" %>
+
+<%# we need  to overwrite the method to delete , instead of the get method
+by default %>
+<%= link_to "Delete", event_path(@event), class: "button", method: :delete,
+          data: {  confirm: "Are You Sure!" } %>
 <section>
