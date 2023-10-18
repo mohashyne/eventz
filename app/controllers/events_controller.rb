@@ -2,7 +2,10 @@ class EventsController < ApplicationController
     def index
     #    @age = rand(100) 
     #    @events = ["LevelUp","Hackaton","Team Crystal", "Rails User Group"]
-    @events = Event.all
+    # @events = Event.all
+
+    # custom queries
+    @events = Event.upcoming
     end
 
     def show
