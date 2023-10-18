@@ -22,6 +22,7 @@ by default
 NOTE: method: :delete is deprecated in rails 7%>
 <%= link_to "Delete", @event, class: "button", "data-method": :delete,
           data: { confirm: "Are You Sure!" } %>
+          
 
 <%# TODO: THE DELETE  BUTTON  ABOVE IS NOT WORKINNG, SO  I AM USING THIS ONE, BUT WILL TRY TO FIX THE ABOVE LATER %>
           <%= form_with(model: @event, method: :delete, url: event_path(@event), data: { confirm: "Are you sure?" }) do |form| %>
