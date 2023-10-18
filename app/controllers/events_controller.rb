@@ -50,6 +50,14 @@ class EventsController < ApplicationController
      redirect_to @event
     end
 
+    def destroy
+        @event = Event.find(params[:id])
+        @event_name = @event.name # Assuming 'name' is the attribute holding the event's name
+        @event.destroy
+      
+        redirect_to events_path, notice: "Event '#{@event_name}' was successfully deleted."
+      end
+      
     # to maintain DRY
     private
 

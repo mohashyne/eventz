@@ -17,8 +17,15 @@
 <section  class="admin">
 <%= link_to "Edit", edit_event_path(@event), class: "button" %>
 
-<%# we need  to overwrite the method to delete , instead of the get method
-by default %>
-<%= link_to "Delete", event_path(@event), class: "button", method: :delete,
-          data: {  confirm: "Are You Sure!" } %>
+<%# we need  to overwrite the method to delete (by seetting a http verb to delete) , instead of the get method
+by default 
+NOTE: method: :delete is deprecated in rails 7%>
+<%= link_to "Delete", @event, class: "button", "data-method": :delete,
+          data: { confirm: "Are You Sure!" } %>
+
+<%# TODO: THE DELETE  BUTTON  ABOVE IS NOT WORKINNG, SO  I AM USING THIS ONE, BUT WILL TRY TO FIX THE ABOVE LATER %>
+          <%= form_with(model: @event, method: :delete, url: event_path(@event), data: { confirm: "Are you sure?" }) do |form| %>
+  <%= form.submit "Delete", class: "button" %>
+<% end %>
+
 <section>
