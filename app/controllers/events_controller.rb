@@ -29,7 +29,7 @@ class EventsController < ApplicationController
         # event_params = 
         # params.require(:event).permit(:name, :description, :location, :price, :starts_at)
         # we are using this to update the event
-        @event.update(event_params)
+        if @event.update(event_params)
 
         # redirect
         # redirect_to event_path(@event)
@@ -37,6 +37,9 @@ class EventsController < ApplicationController
         # OR
 
         redirect_to @event
+        else
+           render :edit
+        end 
        
     end
 
