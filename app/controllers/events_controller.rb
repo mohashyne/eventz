@@ -49,8 +49,11 @@ class EventsController < ApplicationController
     # event_params = 
     #     params.require(:event).permit(:name, :description, :location, :price, :starts_at)   
      @event = Event.new(event_params)
-     @event.save
+     if @event.save
      redirect_to @event
+     else
+      render :new
+      end
     end
 
     def destroy
