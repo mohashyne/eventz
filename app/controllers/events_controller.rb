@@ -35,12 +35,11 @@ class EventsController < ApplicationController
         # redirect_to event_path(@event)
 
         # OR
-
-        redirect_to @event
+        # flash[:notice] = "#{@event.name}:  Event sucessfully updated!"
+        redirect_to @event, notice: "#{@event.name}:  Event sucessfully updated!"
         else
            render :edit
-        end 
-       
+        end   
     end
 
     def new
@@ -53,7 +52,7 @@ class EventsController < ApplicationController
     #     params.require(:event).permit(:name, :description, :location, :price, :starts_at)   
      @event = Event.new(event_params)
      if @event.save
-     redirect_to @event
+     redirect_to @event, notice: "#{@event.name}:  Event sucessfully created!"
      else
         render :new
         end
