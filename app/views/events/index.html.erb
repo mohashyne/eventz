@@ -1,6 +1,9 @@
 
 <% @events.each do |event| %>
 <section class="event">
+<div class="image"> 
+<%= image_tag event.image_file_name %>
+</div>
 <div class="summary">
 <%# instead of "link_to event.name, event_path(event) or event_path(event.id) "
 we can use 
