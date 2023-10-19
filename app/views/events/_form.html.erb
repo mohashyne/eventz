@@ -1,6 +1,12 @@
 <%#to use the local browser for submission we set the 
  loccal to true , local: true annd that  disable ajx%>
 <%= form_with(model: event, local: true) do |f| %>
+<%# <%- event.errors.full_messages.to_sentence %>
+
+ <%# <%= render 'shared/error_messages', object: f.object %>
+                    
+                        <%# OR %>
+  <%= render 'shared/errors', object: event %>
 
 <%= f.label :name %>
 <%= f.text_field :name, autofocus: true %>
@@ -29,3 +35,8 @@
 <%# the button an name will be assigned automatically if we use tthe local: true %>
 <%= f.submit %>
 <% end %>
+
+
+
+
+
