@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :registrations
 # #  to define the root page by assigning
 # # our homepage
 # root  "events#index"
