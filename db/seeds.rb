@@ -38,7 +38,9 @@ Event.create!([
     starts_at: 65.days.from_now,
     description: %{
       Kata Camp is where developers go to practice their craft without interruptions. Skip the status reports and stand-up meetings of a typical project. Just get 'er done! Price includes a buffet lunch and a leather-bound journal to record your kata achievements.
-    }.squish
+    }.squish,
+    image_file_name: 'katacamp.png',
+    capacity: 50
   },
   {
     name: "Coffee 'n Code",
@@ -56,7 +58,9 @@ Event.create!([
     starts_at: 2.days.ago,
     description: %{
       Come enjoy a technical talk and meet local Rails developers! This week's topic is a comparison of editors, templating systems, and whether to use tabs or spaces.
-    }.squish
+    }.squish,
+    image_file_name: 'katacamp.png',
+    capacity: 50
   },
   {
     name: 'Ruby User Group',
